@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "Desktop"
+location: "asia-northeast3"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "chatdb"
+      cloudSql:
+        instanceId: "firebase init hosting"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
