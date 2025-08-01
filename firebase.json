@@ -1,10 +1,15 @@
 {
   "hosting": {
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "site": "chat-f0752",
+    "source": ".output/public",
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "ssrApp"
+      }
     ]
+  },
+  "functions": {
+    "source": ".output"
   }
 }
