@@ -1,15 +1,14 @@
 {
   "hosting": {
-    "site": "chat-f0752",
-    "source": ".output/public",
+    "source": ".next",
     "rewrites": [
       {
         "source": "**",
-        "function": "ssrApp"
+        "function": "nextApp"
       }
     ]
   },
   "functions": {
-    "source": ".output"
+    "source": "functions"
   }
 }
