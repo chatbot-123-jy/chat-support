@@ -1,16 +1,24 @@
 {
-  "functions": {
-    "source": "functions"
-  },
   "hosting": {
-    "public": "public",
+    "public": "chatapp",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "frameworksBackend": {
-      "region": "asia-east1"
-    }
+    "rewrites": [
+      {
+        "source": "/admin/**",
+        "destination": "/admin/index.html"
+      },
+      {
+        "source": "/client/**",
+        "destination": "/client/index.html"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }
