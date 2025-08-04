@@ -9,20 +9,26 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Install dependencies
+        working-directory: ./my-chat-app
         run: npm install
 
       - name: Build Next.js App
+        working-directory: ./my-chat-app
         run: npm run build
 
       - name: Deploy to Firebase Hosting
+        working-directory: ./my-chat-app
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
