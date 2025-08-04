@@ -1,11 +1,15 @@
+// chat-support/firebase.json
 {
   "hosting": {
+    // 1. 정적 파일이 들어있는 디렉터리 이름
     "public": "chatapp",
+    // 2. git metadata, 숨김 파일, node_modules 등 제외
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
+    // 3. SPA 형식으로 admin, client, 그 외 라우팅 처리
     "rewrites": [
       {
         "source": "/admin/**",
