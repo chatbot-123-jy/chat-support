@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello Firebase</title>
+
+    <!-- ✅ Firebase SDK (Compat 버전) -->
+    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore-compat.js"></script>
+  </head>
+  <body>
+    <h1>🚀 Firebase Hosting 성공!</h1>
+    <div id="output"></div>
+
+    <script>
+      // ✅ Firebase 구성 정보
+      const firebaseConfig = {
+        apiKey: "AIzaSyAHU-5cvuZ2FgMvmjgvIjAIJGurzRqlbH0",
+        authDomain: "chat-f0752.firebaseapp.com",
+        projectId: "chat-f0752",
+        storageBucket: "chat-f0752.firebasestorage.app",
+        messagingSenderId: "370662181725",
+        appId: "1:370662181725:web:f52496d2d0df25fc8a36b4",
+        measurementId: "G-3H95K26M5J"
+      };
+
+      // ✅ Firebase 초기화
+      firebase.initializeApp(firebaseConfig);
+
+      // ✅ Firestore 인스턴스
+      const db = firebase.firestore();
+
+      // ✅ 예시: chats 컬렉션의 문서 불러오기
+      db.collection("chats").get().then((snapshot) => {
+        const output = document.getElementById("output");
+        snapshot.forEach((doc) => {
+          const p = document.createElement("p");
+          p.textContent = `${doc.id} : ${JSON.stringify(doc.data())}`;
+          output.appendChild(p);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -3,6 +3,7 @@
     "source": "functions"
   },
   "hosting": {
+<<<<<<< HEAD
     "source": ".",
     "ignore": [
       "firebase.json",
@@ -12,5 +13,17 @@
     "frameworksBackend": {
       "region": "asia-east1"
     }
+=======
+    "source": ".next",
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "nextApp"
+      }
+    ]
+  },
+  "functions": {
+    "source": "functions"
+>>>>>>> e2216ce (chore: move into my-chat-app and build)
   }
 }
