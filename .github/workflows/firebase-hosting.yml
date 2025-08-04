@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: my-chat-app
+        working-directory: public/my-chat-app
 
     steps:
       - name: Checkout source code
