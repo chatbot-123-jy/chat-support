@@ -1,14 +1,16 @@
 {
-  "hosting": {
-    "source": ".next",
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "nextApp"
-      }
-    ]
-  },
   "functions": {
     "source": "functions"
+  },
+  "hosting": {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "asia-east1"
+    }
   }
 }
